@@ -1,0 +1,7 @@
+@import "./media";
+
+:root {
+  --color-background: #fff;
+  --layout-min-width: 1024px;
+  --page-header-height: 80px;
+}

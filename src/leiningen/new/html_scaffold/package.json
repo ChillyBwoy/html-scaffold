@@ -1,0 +1,46 @@
+{
+  "name": "{{ns-name}}",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jsbeautifier": "^2.1.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-stylelint": "^5.0.0",
+    "normalize.css": "^7.0.0",
+    "postcss": "^6.0.14",
+    "postcss-assets": "^5.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-reporter": "^5.0.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-order": "^0.8.0",
+    "svgo": "^1.0.3"
+  },
+  "scripts": {
+    "beautify": "npx gulp beautify",
+    "build": "npx gulp",
+    "start": "npx gulp watch",
+    "stylelint": "npx stylelint src/css/**/*.css"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "block-no-empty": null,
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
+  }
+}

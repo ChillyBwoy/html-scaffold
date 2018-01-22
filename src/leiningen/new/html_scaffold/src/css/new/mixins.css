@@ -1,0 +1,19 @@
+@import "./media";
+
+:root {
+  --header-1: {
+    @media (--mobile) {}
+  };
+
+  --header-2: {
+    @media (--mobile) {}
+  };
+
+  --header-3: {
+    @media (--mobile) {}
+  };
+
+  --text: {
+    @media (--mobile) {}
+  };
+}

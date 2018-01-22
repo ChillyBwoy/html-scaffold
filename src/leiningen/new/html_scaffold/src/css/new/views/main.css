@@ -1,0 +1,6 @@
+@import "../base";
+@import "../page";
+
+.main {
+  position: relative;
+}

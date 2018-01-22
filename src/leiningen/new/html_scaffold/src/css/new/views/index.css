@@ -1,0 +1,6 @@
+@import "../base";
+@import "../page";
+
+.index {
+  position: relative;
+}
