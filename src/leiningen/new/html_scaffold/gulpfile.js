@@ -35,7 +35,7 @@ gulp.task('lint', () =>
 
 gulp.task('css', () =>
   gulp.src([
-        './src/css/{{ns-name}}/vendor.css',
+        './src/css/{{ns-name}}/views/vendor.css',
         './src/css/{{ns-name}}/views/index.css',
         './src/css/{{ns-name}}/views/main.css',
       ])
