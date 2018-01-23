@@ -3,24 +3,21 @@
             [compojure.route :as route]
             [compojure.handler :as handler]
             [hiccup.middleware :refer (wrap-base-url)]
-            [{{ns-name}}.core :as core]
-            [{{ns-name}}.layout :as layout]
-            [{{ns-name}}.views.not-found :as not-found]))
+            [{{ns-name}}.app :as app]
+            [{{ns-name}}.views.not-found :as not-found]
+            [{{ns-name}}.data :as data]))
 
-
-(def context {:title "{{ns-name}}"})
-
+(def context (data/create-context))
 
 (defroutes app-routes
   (apply routes
     (map
       (fn [[url args view]]
         (GET url args view))
-      (core/routes context)))
+      (app/routes context)))
   (route/resources "/")
-  (route/not-found (layout/base
-                     (conj context {:title "404"})
-                     (not-found/view context))))
+  (route/not-found (not-found/view context)))
+
 
 (def app
   (-> (handler/site app-routes)

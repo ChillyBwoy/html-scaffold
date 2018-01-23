@@ -1,6 +1,6 @@
-@import "./vars";
-@import "./mixins";
-@import "./media";
+@import "../vars";
+@import "../mixins";
+@import "../media";
 
 /*
  * Base page and layout styles

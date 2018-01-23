@@ -18,16 +18,16 @@
   "Component wrapper with description"
   ([name body]
    (list
-     (str "\n\n<!-- " name " -->\n")
+     (str "\n<!-- " name " -->\n")
      body
-     (str "\n<!-- /" name " -->\n\n")))
+     (str "\n<!-- /" name " -->\n")))
   ([name description body]
    (list
     (str
-      "\n\n<!-- "
+      "\n<!--\n"
       name
-      (when description
-        ": " description)
-      " -->\n")
+      "\n\n"
+      description
+      "\n-->\n")
     body
-    (str "\n<!-- /" name " -->\n\n"))))
+    (str "\n<!-- /" name " -->\n"))))

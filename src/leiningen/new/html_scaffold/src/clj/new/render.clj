@@ -1,8 +1,11 @@
 (ns {{ns-name}}.render
   (:require [clojure.java.io :as io]
-            [{{ns-name}}.core :as core]))
+            [{{ns-name}}.app :as app]
+            [{{ns-name}}.data :as data]))
 
-(def context {:suffix ".html"})
+
+(def context (data/create-context {:title "Boo"
+                                   :suffix ".html"}))
 
 
 (defn get-resource
@@ -13,6 +16,6 @@
 
 
 (defn -main [& args]
-  (let [data (map get-resource (core/routes context))]
+  (let [data (map get-resource (app/routes context))]
     (doseq [obj data]
       (spit (:where obj) (:what obj)))))

@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 const gulp = require('gulp');
 
 const gulpStylelint = require('gulp-stylelint');
@@ -34,11 +35,7 @@ gulp.task('lint', () =>
       })));
 
 gulp.task('css', () =>
-  gulp.src([
-        './src/css/{{ns-name}}/views/vendor.css',
-        './src/css/{{ns-name}}/views/index.css',
-        './src/css/{{ns-name}}/views/main.css',
-      ])
+  gulp.src(glob.sync('src/css/boo/views/**/*.css'))
       .pipe(postcss([
         require('postcss-import')(),
         require('postcss-cssnext')(),
